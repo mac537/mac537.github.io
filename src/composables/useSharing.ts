@@ -127,27 +127,36 @@ ${generateShareUrl()}`
   const generateDiscordCollectionTable = () => {
     const baseTypeSprites = sprites.value.filter((sprite) => sprite.variant === 'Normal')
 
+    const typeWidth = Math.max(12, ...baseTypeSprites.map((sprite) => sprite.type.length))
+    const variantWidth = Math.max(7, ...DISCORD_EXPORT_VARIANTS.map((variant) => variant.length))
+
+    const pad = (value: string, width: number) => value.padEnd(width, ' ')
+
+    const header = `| ${pad('TYPE', typeWidth)} | ${DISCORD_EXPORT_VARIANTS.map((variant) => pad(variant.toUpperCase(), variantWidth)).join(' | ')} |`
+    const separator = `|-${'-'.repeat(typeWidth)}-|-${DISCORD_EXPORT_VARIANTS.map(() => '-'.repeat(variantWidth)).join('-|-')}-|`
+
     const rows = baseTypeSprites.map((baseSprite) => {
       const cells = DISCORD_EXPORT_VARIANTS
         .map((variant) => {
           const sprite = sprites.value.find((s) => s.type === baseSprite.type && s.variant === variant)
-          if (!sprite) return null
+          if (!sprite) return 'N/A'
           return ownedIds.value.includes(sprite.id) ? '✅' : '❌'
         })
-        .filter((cell): cell is '✅' | '❌' => cell !== null)
+        .map((cell) => pad(cell, variantWidth))
 
-      const paddedLabel = baseSprite.type.padEnd(12, ' ')
-      return `${paddedLabel}|${cells.join('|')}|`
+      const paddedLabel = pad(baseSprite.type, typeWidth)
+      return `| ${paddedLabel} | ${cells.join(' | ')} |`
     })
 
     const summary = `${ownedCount.value}/${sprites.value.length} collected · track yours at mac537.github.io`
 
     return [
-      '|NORMAL|GOLD|GUMMY|GALAXY',
-      '✅Owned',
-      '❌Missing',
-      '-----------------------',
+      '```txt',
+      header,
+      separator,
       ...rows,
+      '```',
+      '✅ = OWNED  |  ❌ = MISSING  |  N/A = NOT AVAILABLE',
       '',
       summary,
     ].join('\n')

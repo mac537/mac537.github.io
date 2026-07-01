@@ -136,7 +136,7 @@ onMounted(() => {
       :completion-percentage="completionPercentage"
       :sprites="sprites"
     />
-    <SpriteFiltersBar v-model="filters" @clear-selection="clearSelection" />
+    <SpriteFiltersBar v-model="filters" />
     <SharingPanel
       :copied-link="copiedLink"
       :is-exporting="isExporting"
@@ -144,6 +144,7 @@ onMounted(() => {
       @export-as-image="exportAsImage"
       @export-for-discord="exportDiscordTable"
       @open-discord-modal="toggleDiscordModal"
+      @clear-selection="clearSelection"
     />
     <main
       v-if="filteredSprites.length > 0"

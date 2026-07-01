@@ -9,16 +9,22 @@ defineEmits<{
   exportAsImage: []
   exportForDiscord: []
   openDiscordModal: []
+  clearSelection: []
 }>()
 </script>
 
 <template>
   <Card>
     <template #title>
-      <h2 class="text-xl font-black text-white uppercase tracking-wider flex items-center gap-2">
-        <img src="@/assets/sprite.webp" alt="Sprite" class="w-8 h-8" />
-        <span>Share Your Collection</span>
-      </h2>
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-black text-white uppercase tracking-wider flex items-center gap-2">
+          <img src="@/assets/sprite.webp" alt="Sprite" class="w-8 h-8" />
+          <span>Share Your Collection</span>
+        </h2>
+        <Button
+          label="Clear Selection" severity="danger" icon="pi pi-undo" @click="$emit('clearSelection')"
+        />
+      </div>
     </template>
     <template #subtitle>
       <p class="text-white">Generate an instant link or download an image of your progress. The link encodes your inventory dynamically: no databases or registrations required!</p>

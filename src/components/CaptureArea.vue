@@ -63,12 +63,12 @@ const props = defineProps<{
       </div>
     </div> -->
     <div class="grid gap-y-6">
-      <AppHeader
+      <!-- <AppHeader
         :owned-count="ownedCount"
         :total-count="sprites.length"
         :completion-percentage="completionPercentage"
         :sprites="sprites"
-      />
+      /> -->
 
       <div
         style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem;"
@@ -83,7 +83,8 @@ const props = defineProps<{
         />
       </div>
 
-      <div class="flex items-center text-xl">Generated automatically at <a class="ml-1" href="https://mac537.github.io/" target="_blank" rel="noopener noreferrer">https://mac537.github.io/</a></div>
+      <div class="text-xl font-semibold p-2 rounded bg-emerald-500/10 text-emerald-500">Generated automatically at https://mac537.github.io</div>
+      <!-- <div class="flex items-center text-xl">Generated automatically at <a class="ml-1" href="https://mac537.github.io/" target="_blank" rel="noopener noreferrer">https://mac537.github.io/</a></div> -->
     </div>
   
   </div>

@@ -52,7 +52,7 @@ const cardStateClass = () => {
     @mouseleave="handleMouseLeave">
     <template #header>
       <div class="flex justify-between items-start absolute p-2 w-full">
-        <Tag v-if="owned" severity="success" value="Collected" />
+        <Tag v-if="owned" severity="success" value="Collected" class="uppercase" />
         <i
           v-if="owned" 
           class="pi pi-crown text-gray-500"
