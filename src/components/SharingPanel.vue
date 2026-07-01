@@ -27,7 +27,7 @@ defineEmits<{
       <div class="flex flex-col sm:flex-row gap-3">
         <Button :label="copiedLink ? 'Link Copied!' : 'Copy Collection Link'" :icon="copiedLink ? 'pi pi-check' : 'pi pi-link'" @click="$emit('copyShareLink')" severity="warn" />
         <Button :label="isExporting ? 'Generating Image...' : 'Export as Image'" :icon="isExporting ? 'pi pi-spin pi-spinner' : 'pi pi-image'" @click="$emit('exportAsImage')" severity="help" />
-        <Button label="Export for Discord" icon="pi pi-discord" @click="$emit('exportForDiscord')" severity="secondary" />
+        <Button label="Export for Discord" icon="pi pi-discord" @click="$emit('exportForDiscord')" severity="info" />
       </div>
     </template>
   </Card>

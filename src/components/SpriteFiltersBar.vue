@@ -46,6 +46,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'update:modelValue': [value: SpriteFilters]
+  'clear-selection': []
 }>()
 
 function handleVariantChange(newVariant: SpriteFilters['variant']) {
@@ -113,6 +114,12 @@ function handleRarityChange(newRarity: SpriteFilters['rarity']) {
         >
           <i class="pi pi-times"></i>
         </button> -->
+      </div>
+
+      <div class="w-full flex justify-end sm:col-start-2 md:col-start-3">
+        <Button
+          label="Clear Selection" severity="danger" icon="pi pi-undo" @click="$emit('clear-selection')"
+        />
       </div>
 
       <!-- <div class="flex justify-center items-center gap-2">

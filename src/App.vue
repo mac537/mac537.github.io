@@ -37,6 +37,7 @@ const {
   inWishlist,
   toggleOwned,
   toggleMastered,
+  clearSelection,
   initFromStorage,
 } = useSprites()
 
@@ -135,7 +136,7 @@ onMounted(() => {
       :completion-percentage="completionPercentage"
       :sprites="sprites"
     />
-    <SpriteFiltersBar v-model="filters" />
+    <SpriteFiltersBar v-model="filters" @clear-selection="clearSelection" />
     <SharingPanel
       :copied-link="copiedLink"
       :is-exporting="isExporting"

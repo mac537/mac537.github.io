@@ -126,6 +126,25 @@ export function useSprites() {
     persistMastered()
   }
 
+  const clearSelection = () => {
+    const hadSelection = ownedIds.value.length > 0 || masteredIds.value.length > 0 || wishlistIds.value.length > 0
+
+    ownedIds.value = []
+    masteredIds.value = []
+    wishlistIds.value = []
+    persistOwned()
+    persistMastered()
+
+    toast.add({
+      summary: hadSelection ? 'Selection Cleared' : 'No Selection',
+      detail: hadSelection
+        ? 'All selected sprites were removed from your inventory and mastered list.'
+        : 'There were no selected sprites to clear.',
+      severity: 'info',
+      life: 3000,
+    })
+  }
+
   const getSpriteById = (id: number): Sprite | undefined => {
     return sprites.value.find((sprite) => sprite.id === id)
   }
@@ -160,6 +179,7 @@ export function useSprites() {
     inWishlist,
     toggleOwned,
     toggleMastered,
+    clearSelection,
     initFromStorage,
     getSpriteById
   }
