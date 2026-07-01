@@ -1,0 +1,551 @@
+[
+  {
+    "id": 1,
+    "name": "Water",
+    "type": "Water",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "description": "Regenera tu escudo gradualmente mientras estés sumergido en agua.",
+    "image_url": "/assets/sprites/water_basic.png"
+  },
+  {
+    "id": 2,
+    "name": "Earth",
+    "type": "Earth",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "description": "Aumenta ligeramente tu velocidad de movimiento al esprintar por terreno natural.",
+    "image_url": "/assets/sprites/earth_basic.png"
+  },
+  {
+    "id": 3,
+    "name": "Fire",
+    "type": "Fire",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "description": "Inmune al daño por fuego ambiental y tus ataques cuerpo a cuerpo pueden prender estructuras.",
+    "image_url": "/assets/sprites/fire_basic.png"
+  },
+  {
+    "id": 4,
+    "name": "Fishy",
+    "type": "Fishy",
+    "rarity": "Rare",
+    "variant": "Normal",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/fishy_basic.png"
+  },
+  {
+    "id": 5,
+    "name": "Duck",
+    "type": "Duck",
+    "rarity": "Epic",
+    "variant": "Normal",
+    "description": "Regenera 5 de escudo por segundo a ti y a tu escuadrón cercano mientras haces un gesto (emote).",
+    "image_url": "/assets/sprites/duck_basic.png"
+  },
+  {
+    "id": 6,
+    "name": "Ghost",
+    "type": "Ghost",
+    "rarity": "Epic",
+    "variant": "Normal",
+    "description": "Te vuelves parcialmente invisible y reduces el ruido de tus pasos al agacharte inmóvil por 3 segundos.",
+    "image_url": "/assets/sprites/ghost_basic.png"
+  },
+  {
+    "id": 7,
+    "name": "Demon",
+    "type": "Demon",
+    "rarity": "Epic",
+    "variant": "Normal",
+    "description": "Otorga un subidón de daño del 10% durante 5 segundos inmediatamente después de conseguir una eliminación.",
+    "image_url": "/assets/sprites/demon_basic.png"
+  },
+  {
+    "id": 8,
+    "name": "Aura",
+    "type": "Aura",
+    "rarity": "Epic",
+    "variant": "Normal",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/aura_basic.png"
+  },
+  {
+    "id": 9,
+    "name": "Striker",
+    "type": "Striker",
+    "rarity": "Epic",
+    "variant": "Normal",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/striker_basic.png"
+  },
+  {
+    "id": 10,
+    "name": "King",
+    "type": "King",
+    "rarity": "Legendary",
+    "variant": "Normal",
+    "description": "Aumenta la salud máxima de las estructuras que construyes en un 25%.",
+    "image_url": "/assets/sprites/king_basic.png"
+  },
+  {
+    "id": 11,
+    "name": "Dream",
+    "type": "Dream",
+    "rarity": "Legendary",
+    "variant": "Normal",
+    "description": "Muestra la ubicación del siguiente círculo de la tormenta en tu minimapa desde el inicio de la fase actual.",
+    "image_url": "/assets/sprites/dream_basic.png"
+  },
+  {
+    "id": 12,
+    "name": "Punk",
+    "type": "Punk",
+    "rarity": "Legendary",
+    "variant": "Normal",
+    "description": "Reduce el tiempo de recarga de todas las armas de rareza Épica o superior en un 15%.",
+    "image_url": "/assets/sprites/punk_basic.png"
+  },
+  {
+    "id": 13,
+    "name": "Boss",
+    "type": "Boss",
+    "rarity": "Legendary",
+    "variant": "Normal",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/boss_basic.png"
+  },
+  {
+    "id": 14,
+    "name": "Grim",
+    "type": "Grim",
+    "rarity": "Mythic",
+    "variant": "Normal",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/grim_basic.png"
+  },
+  {
+    "id": 15,
+    "name": "Zero Point",
+    "type": "Zero Point",
+    "rarity": "Mythic",
+    "variant": "Normal",
+    "description": "Genera un miniescudo de burbuja protectora a tu alrededor cada vez que consumes un objeto de curación.",
+    "image_url": "/assets/sprites/zeropoint_basic.png"
+  },
+  {
+    "id": 16,
+    "name": "The Burnt Peanut",
+    "type": "The Burnt Peanut",
+    "rarity": "Mythic",
+    "variant": "Normal",
+    "description": "Habilidad secreta: Al caer derribado (knocked), dejas caer un rastro de ceniza explosiva que aleja a los enemigos.",
+    "image_url": "/assets/sprites/theburntpeanut_basic.png"
+  },
+  {
+    "id": 17,
+    "name": "Gold Water",
+    "type": "Water",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Regenera tu escudo en el agua y otorga PE de bonificación por eliminaciones.",
+    "image_url": "/assets/sprites/water_gold.png"
+  },
+  {
+    "id": 18,
+    "name": "Gold Earth",
+    "type": "Earth",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Mayor velocidad en terreno natural y los cofres enterrados brillan a través de las estructuras.",
+    "image_url": "/assets/sprites/earth_gold.png"
+  },
+  {
+    "id": 19,
+    "name": "Gold Fire",
+    "type": "Fire",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Inmunidad al fuego y tus disparos tienen un 20% de probabilidad de infligir daño ígneo adicional al impactar.",
+    "image_url": "/assets/sprites/fire_gold.png"
+  },
+  {
+    "id": 20,
+    "name": "Gold Fishy",
+    "type": "Fishy",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/fishy_gold.png"
+  },
+  {
+    "id": 21,
+    "name": "Gold Duck",
+    "type": "Duck",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Regeneración por gestos aumentada. Suelta 50 barras de oro aleatoriamente al terminar un baile.",
+    "image_url": "/assets/sprites/duck_gold.png"
+  },
+  {
+    "id": 22,
+    "name": "Gold Ghost",
+    "type": "Ghost",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Al agacharte inmóvil, te vuelves totalmente invisible y marcas la posición de los enemigos cercanos en el minimapa de tu equipo.",
+    "image_url": "/assets/sprites/ghost_gold.png"
+  },
+  {
+    "id": 23,
+    "name": "Gold Demon",
+    "type": "Demon",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Subidón de daño tras eliminación que además recarga instantáneamente el cargador de tu arma activa.",
+    "image_url": "/assets/sprites/demon_gold.png"
+  },
+  {
+    "id": 24,
+    "name": "Gold King",
+    "type": "King",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Estructuras más fuertes y repara automáticamente tus construcciones dañadas a cambio de Sprite Dust.",
+    "image_url": "/assets/sprites/king_gold.png"
+  },
+  {
+    "id": 25,
+    "name": "Gold Aura",
+    "type": "Aura",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/aura_gold.png"
+  },
+  {
+    "id": 26,
+    "name": "Gold Striker",
+    "type": "Striker",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/striker_gold.png"
+  },
+  {
+    "id": 27,
+    "name": "Gold Dream",
+    "type": "Dream",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Revela la tormenta y marca en el mapa el punto de extracción de Sprites activo más cercano.",
+    "image_url": "/assets/sprites/dream_gold.png"
+  },
+  {
+    "id": 28,
+    "name": "Gold Punk",
+    "type": "Punk",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Reduce el tiempo de recarga en un 15% y aumenta el daño de tus armas épicas o superiores en un 10% adicional.",
+    "image_url": "/assets/sprites/punk_gold.png"
+  },
+  {
+    "id": 29,
+    "name": "Gold Boss",
+    "type": "Boss",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/boss_gold.png"
+  },
+  {
+    "id": 30,
+    "name": "Gold Grim",
+    "type": "Grim",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/grim_gold.png"
+  },
+  {
+    "id": 31,
+    "name": "Gold Zero Point",
+    "type": "Zero Point",
+    "rarity": "Special",
+    "variant": "Gold",
+    "description": "La burbuja protectora se activa al curar y además repele automáticamente las granadas y proyectiles explosivos cercanos.",
+    "image_url": "/assets/sprites/zeropoint_gold.png"
+  },
+  {
+    "id": 32,
+    "name": "Gummy Water",
+    "type": "Water",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Regenera tu escudo en el agua y duplica la velocidad de recolección de Sprite Dust.",
+    "image_url": "/assets/sprites/water_candy.png"
+  },
+  {
+    "id": 33,
+    "name": "Gummy Earth",
+    "type": "Earth",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Tu velocidad en terreno natural aumenta y cada baya o fruta que recoges otorga el doble de recuperación.",
+    "image_url": "/assets/sprites/earth_candy.png"
+  },
+  {
+    "id": 34,
+    "name": "Gummy Fire",
+    "type": "Fire",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Inmunidad al fuego y provoca una pequeña explosión ígnea al romper tu escudo.",
+    "image_url": "/assets/sprites/fire_candy.png"
+  },
+  {
+    "id": 35,
+    "name": "Gummy Fishy",
+    "type": "Fishy",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/fishy_candy.png"
+  },
+  {
+    "id": 36,
+    "name": "Gummy Duck",
+    "type": "Duck",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Tus gestos regeneran escudo y también otorgan una pequeña carga de velocidad de movimiento a todos los aliados cercanos.",
+    "image_url": "/assets/sprites/duck_candy.png"
+  },
+  {
+    "id": 37,
+    "name": "Gummy Ghost",
+    "type": "Ghost",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Invisibilidad al agacharte. Al recibir daño bajo este estado, realizas un parpadeo (dash) hacia adelante.",
+    "image_url": "/assets/sprites/ghost_candy.png"
+  },
+  {
+    "id": 38,
+    "name": "Gummy Demon",
+    "type": "Demon",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "El subidón de daño tras una eliminación aumenta al 15% y se activa también al asistir en una eliminación.",
+    "image_url": "/assets/sprites/demon_candy.png"
+  },
+  {
+    "id": 39,
+    "name": "Gummy King",
+    "type": "King",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Tus estructuras tienen un 25% más de salud y los materiales recolectados al destruir edificios enemigos se duplican.",
+    "image_url": "/assets/sprites/king_candy.png"
+  },
+  {
+    "id": 40,
+    "name": "Gummy Aura",
+    "type": "Aura",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/aura_candy.png"
+  },
+  {
+    "id": 41,
+    "name": "Gummy Striker",
+    "type": "Striker",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/striker_candy.png"
+  },
+  {
+    "id": 42,
+    "name": "Gummy Dream",
+    "type": "Dream",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Revela el siguiente círculo de la tormenta y activa una visión predictiva que muestra las rutas de rotación de los enemigos.",
+    "image_url": "/assets/sprites/dream_candy.png"
+  },
+  {
+    "id": 43,
+    "name": "Gummy Punk",
+    "type": "Punk",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Recarga de armas más rápida y añade un efecto de retroceso (knockback) a tus disparos de escopeta.",
+    "image_url": "/assets/sprites/punk_candy.png"
+  },
+  {
+    "id": 44,
+    "name": "Gummy Boss",
+    "type": "Boss",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/boss_candy.png"
+  },
+  {
+    "id": 45,
+    "name": "Gummy Grim",
+    "type": "Grim",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/grim_candy.png"
+  },
+  {
+    "id": 46,
+    "name": "Gummy Zero Point",
+    "type": "Zero Point",
+    "rarity": "Special",
+    "variant": "Gummy",
+    "description": "Genera un miniescudo de burbuja al curar y duplica la duración de todos los efectos de curación consumidos.",
+    "image_url": "/assets/sprites/zeropoint_candy.png"
+  },
+  {
+    "id": 47,
+    "name": "Galaxy Water",
+    "type": "Water",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Forma una tormenta de agua galáctica que regenera el escudo de todo el escuadrón a velocidad duplicada durante 10 segundos.",
+    "image_url": "/assets/sprites/water_galaxy.png"
+  },
+  {
+    "id": 48,
+    "name": "Galaxy Earth",
+    "type": "Earth",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Crea un campo de gravedad terrestre que ralentiza a los enemigos que cruzan tu rastro y revela cofres enterrados a 50m.",
+    "image_url": "/assets/sprites/earth_galaxy.png"
+  },
+  {
+    "id": 49,
+    "name": "Galaxy Fire",
+    "type": "Fire",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Envuelve tu arma en llamas galácticas que causan daño por quemadura continuo y dejan rastros de fuego al moverte.",
+    "image_url": "/assets/sprites/fire_galaxy.png"
+  },
+  {
+    "id": 50,
+    "name": "Galaxy Fishy",
+    "type": "Fishy",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/fishy_galaxy.png"
+  },
+  {
+    "id": 51,
+    "name": "Galaxy Duck",
+    "type": "Duck",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Al hacer un gesto, creas un aura galáctica que regenera tanto vida como escudo y atrae automáticamente el loot cercano.",
+    "image_url": "/assets/sprites/duck_galaxy.png"
+  },
+  {
+    "id": 52,
+    "name": "Galaxy Ghost",
+    "type": "Ghost",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Genera un campo de invisibilidad galáctica que cubre a todo tu escuadrón cercano y anula el sonido de pasos por 5 segundos.",
+    "image_url": "/assets/sprites/ghost_galaxy.png"
+  },
+  {
+    "id": 53,
+    "name": "Galaxy Demon",
+    "type": "Demon",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Cada eliminación desata una onda de energía demoníaca que inflige 25 de daño a todos los enemigos en un radio de 8m.",
+    "image_url": "/assets/sprites/demon_galaxy.png"
+  },
+  {
+    "id": 54,
+    "name": "Galaxy King",
+    "type": "King",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Tus construcciones generan un campo de energía galáctica que repara automáticamente todas las estructuras aliadas cercanas.",
+    "image_url": "/assets/sprites/king_galaxy.png"
+  },
+  {
+    "id": 55,
+    "name": "Galaxy Aura",
+    "type": "Aura",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/aura_galaxy.png"
+  },
+  {
+    "id": 56,
+    "name": "Galaxy Striker",
+    "type": "Striker",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/striker_galaxy.png"
+  },
+  {
+    "id": 57,
+    "name": "Galaxy Dream",
+    "type": "Dream",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Genera un mapa astral completo que revela la posición de todos los jugadores restantes por 5 segundos cada 60 segundos.",
+    "image_url": "/assets/sprites/dream_galaxy.png"
+  },
+  {
+    "id": 58,
+    "name": "Galaxy Punk",
+    "type": "Punk",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Las recargas generan un pulso de energía que empuja a los enemigos cercanos e inflige 10 de daño en área.",
+    "image_url": "/assets/sprites/punk_galaxy.png"
+  },
+  {
+    "id": 59,
+    "name": "Galaxy Boss",
+    "type": "Boss",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/boss_galaxy.png"
+  },
+  {
+    "id": 60,
+    "name": "Galaxy Grim",
+    "type": "Grim",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Descripción pendiente para esta variante.",
+    "image_url": "/assets/sprites/grim_galaxy.png"
+  },
+  {
+    "id": 61,
+    "name": "Galaxy Zero Point",
+    "type": "Zero Point",
+    "rarity": "Special",
+    "variant": "Galaxy",
+    "description": "Crea un campo de Punto Cero permanente que absorbe el 20% del daño recibido y lo redistribuye como escudo al escuadrón.",
+    "image_url": "/assets/sprites/zeropoint_galaxy.png"
+  }
+]
