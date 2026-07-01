@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Sprite } from '@/types/sprite'
 import SpriteCard from '@/components/SpriteCard.vue'
-import AppHeader from '@/components/AppHeader.vue'
+// import AppHeader from '@/components/AppHeader.vue'
 import { useSprites } from '@/composables/useSprites'
 import { useFilters } from '@/composables/useFilters'
 
@@ -9,8 +9,8 @@ const { filteredSprites } = useFilters()
 
 const {
   // sprites,
-  ownedCount,
-  completionPercentage,
+  // ownedCount,
+  // completionPercentage,
   isOwned,
   isMastered
 } = useSprites()
