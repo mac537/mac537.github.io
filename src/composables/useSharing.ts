@@ -8,12 +8,6 @@ import { useToast } from 'primevue/usetoast';
 
 import { executeCopy } from '@/utils/clipboard'
 
-function formatDiscordTypeLabel(name: string): string {
-  if (name === 'Grim') return 'Grim Reaper'
-  if (name === 'The Burnt Peanut') return 'Burnt Peanut'
-  return name
-}
-
 const copiedLink = ref(false)
 const copiedDiscordMarkdown = ref(false)
 const showDiscordModal = ref(false)
@@ -201,32 +195,6 @@ ${generateShareUrl()}`
 }
 
   const exportAsImage = async () => {
-    // const captureEl = document.getElementById('capture-area')
-    // if (!captureEl) return
-
-    // isExporting.value = true
-    // try {
-    //   await new Promise<void>((resolve) => {
-    //     setTimeout(async () => {
-    //       const canvas = await html2canvas(captureEl, {
-    //         useCORS: true,
-    //         allowTaint: false,
-    //         backgroundColor: '#0c0d14',
-    //         scale: 1,
-    //       })
-    //       const link = document.createElement('a')
-    //       link.download = `sprites-collection-${Date.now()}.png`
-    //       link.href = canvas.toDataURL('image/png')
-    //       link.click()
-    //       resolve()
-    //     }, 300)
-    //   })
-    //   toast.add({ summary: 'Image Exported!', detail: 'Your collection has been saved as a PNG.', icon: 'pi pi-image', severity: 'success', life: 3000 })
-    // } catch {
-    //   toast.add({ summary: 'Export Failed', detail: 'Could not generate the image. Try again.', icon: 'pi pi-exclamation-triangle', severity: 'error', life: 3000 })
-    // } finally {
-    //   isExporting.value = false
-    // }
     isExporting.value = true
     toast.add({ summary: 'Processing Card', detail: 'Preparing the render of your static album...', icon: 'pi pi-image', severity: 'info', life: 3000 })
 

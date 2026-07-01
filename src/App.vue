@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import AppHeader from '@/components/AppHeader.vue'
 import SpriteCard from '@/components/SpriteCard.vue'
 import SpritePopover from '@/components/SpritePopover.vue'
@@ -39,15 +39,6 @@ const {
   toggleMastered,
   initFromStorage,
 } = useSprites()
-
-const filteredOwnedCount = computed(
-  () => filteredSprites.value.filter((sprite) => ownedIds.value.includes(sprite.id)).length,
-)
-
-const filteredCompletionPercentage = computed(() => {
-  if (filteredSprites.value.length === 0) return 0
-  return Math.round((filteredOwnedCount.value / filteredSprites.value.length) * 100)
-})
 
 const rarityValues: Array<SpriteFilters['rarity']> = [
   'All',
