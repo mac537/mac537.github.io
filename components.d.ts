@@ -26,6 +26,5 @@ declare module 'vue' {
     SpritePopover: typeof import('./src/components/SpritePopover.vue')['default']
     Tag: typeof import('primevue/tag')['default']
     Toast: typeof import('primevue/toast')['default']
-    ToastNotification: typeof import('./src/components/ToastNotification.vue')['default']
   }
 }
