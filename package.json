@@ -12,7 +12,6 @@
     "@primeuix/themes": "3.0.0-rc.1",
     "@tailwindcss/vite": "^4.3.1",
     "@zumer/snapdom": "^2.12.9",
-    "html2canvas": "^1.4.1",
     "primeicons": "^7.0.0",
     "primevue": "5.0.0-rc.1",
     "tailwindcss": "^4.3.1",
