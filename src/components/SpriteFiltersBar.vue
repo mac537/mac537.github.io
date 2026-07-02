@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+
+import Checkbox from 'primevue/checkbox'
 import Select from 'primevue/select'
-import MultiSelect from 'primevue/multiselect'
 import IftaLabel from 'primevue/iftalabel'
 import InputText from 'primevue/inputtext'
 
@@ -24,6 +26,15 @@ const emit = defineEmits<{
   'resetFilters': []
 }>()
 
+const allVariantValues = VARIANT_OPTIONS.map((option) => option.value)
+const allRarityValues = RARITY_OPTIONS.map((option) => option.value)
+
+const allVariantsSelected = computed(() => props.modelValue.variant.length === allVariantValues.length)
+const variantIndeterminate = computed(() => props.modelValue.variant.length > 0 && !allVariantsSelected.value)
+
+const allRaritiesSelected = computed(() => props.modelValue.rarity.length === allRarityValues.length)
+const rarityIndeterminate = computed(() => props.modelValue.rarity.length > 0 && !allRaritiesSelected.value)
+
 function handleVariantChange(newVariant: SpriteVariant[] | null) {
   emit('update:modelValue', { ...props.modelValue, variant: newVariant ?? [] })
 }
@@ -34,6 +45,14 @@ function handleOwnedStatusChange(newOwnedStatus: SpriteFilters['ownedStatus'] | 
 
 function handleRarityChange(newRarity: SpriteRarity[] | null) {
   emit('update:modelValue', { ...props.modelValue, rarity: newRarity ?? [] })
+}
+
+function toggleAllVariants(checked: boolean | undefined) {
+  handleVariantChange(checked ? [...allVariantValues] : [])
+}
+
+function toggleAllRarities(checked: boolean | undefined) {
+  handleRarityChange(checked ? [...allRarityValues] : [])
 }
 
 function clearSearch() {
@@ -79,29 +98,69 @@ function clearSearch() {
         <label for="over_label">Inventory</label>
       </IftaLabel>
       <IftaLabel class="w-full">
-        <MultiSelect
+        <Select
           :model-value="modelValue.variant"
           :options="VARIANT_OPTIONS"
           option-label="label"
           option-value="value"
+          multiple
           :pt="selectPt"
           :showClear="modelValue.variant.length > 0"
           placeholder="All"
           @update:model-value="handleVariantChange"
-        />
+        >
+          <template #header>
+            <div class="p-2 border-b border-white/10">
+              <Checkbox
+                :modelValue="allVariantsSelected"
+                binary
+                :indeterminate="variantIndeterminate"
+                @update:modelValue="toggleAllVariants"
+                label="Select All"
+                class="ml-1.5"
+              />
+            </div>
+          </template>
+          <template #option="slotProps">
+            <div class="flex items-center gap-2">
+              <Checkbox :modelValue="slotProps.selected" binary readonly />
+              <span>{{ slotProps.option.label }}</span>
+            </div>
+          </template>
+        </Select>
         <label for="over_label">Variant</label>
       </IftaLabel>
       <IftaLabel class="w-full">
-        <MultiSelect
+        <Select
           :model-value="modelValue.rarity"
           :options="RARITY_OPTIONS"
           option-label="label"
           option-value="value"
+          multiple
           :pt="selectPt"
           :showClear="modelValue.rarity.length > 0"
           placeholder="All"
           @update:model-value="handleRarityChange"
-        />
+        >
+          <template #header>
+            <div class="p-2 border-b border-white/10">
+              <Checkbox
+                :modelValue="allRaritiesSelected"
+                binary
+                :indeterminate="rarityIndeterminate"
+                @update:modelValue="toggleAllRarities"
+                label="Select All"
+                class="ml-1.5"
+              />
+            </div>
+          </template>
+          <template #option="slotProps">
+            <div class="flex items-center gap-2">
+              <Checkbox :modelValue="slotProps.selected" binary readonly />
+              <span>{{ slotProps.option.label }}</span>
+            </div>
+          </template>
+        </Select>
         <label for="over_label">Rarity</label>
       </IftaLabel>
     </div>

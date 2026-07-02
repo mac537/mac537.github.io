@@ -15,7 +15,6 @@ declare module 'vue' {
     Button: typeof import('primevue/button')['default']
     CaptureArea: typeof import('./src/components/CaptureArea.vue')['default']
     Card: typeof import('primevue/card')['default']
-    Checkbox: typeof import('primevue/checkbox')['default']
     Fieldset: typeof import('primevue/fieldset')['default']
     IconField: typeof import('primevue/iconfield')['default']
     InputIcon: typeof import('primevue/inputicon')['default']
