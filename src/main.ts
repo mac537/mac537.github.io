@@ -101,7 +101,7 @@ const MyPreset = definePreset(Aura, {
 });
 
 app.use(PrimeVue, {
-  license: 'eyJpZCI6IjIzNjFlZjVjLWRhMTEtNDk0OS05NDg4LTIxODcwMGRjZDc4YiIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODI5MDc0ODgsImV4cCI6MTgxNDQ0MzQ4OH0.cZILfuJ43uvw1F59Hpf717UCHS5uVQr5R1D-PXKt5QL7-FNhxtbf2wysrSVfZlbhuj40sdTAC4uYTAYqEDPcBg',
+  license: import.meta.env.VITE_PRIMEVUE_LICENSE || '',
   theme: {
     preset: MyPreset,
     options: {
