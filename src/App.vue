@@ -6,17 +6,15 @@ import SpritePopover from '@/components/SpritePopover.vue'
 import SpriteFiltersBar from '@/components/SpriteFiltersBar.vue'
 import SharingPanel from '@/components/SharingPanel.vue'
 import CaptureArea from '@/components/CaptureArea.vue'
-import type { SpriteFilters } from '@/types/sprite'
 import { useSprites } from '@/composables/useSprites'
 import { useFilters } from '@/composables/useFilters'
 import { useSharing } from '@/composables/useSharing'
+import { isOwnedStatus, isSpriteRarity, isSpriteVariant } from '@/constants/spriteFilters'
 // import { useSharing } from '@/composables/useSharing'
 // import DiscordModal from '@/components/DiscordModal.vue'
 
 // import type { ToastState } from '@/types/sprite'
-
-
-const { filters, filteredSprites } = useFilters()
+const { filters, filteredSprites, resetFilters } = useFilters()
 
 const {
   copiedLink,
@@ -40,32 +38,6 @@ const {
   clearSelection,
   initFromStorage,
 } = useSprites()
-
-const rarityValues: Array<SpriteFilters['rarity']> = [
-  'All',
-  'Rare',
-  'Epic',
-  'Legendary',
-  'Mythic',
-  'Special',
-]
-
-const variantValues: Array<SpriteFilters['variant']> = [
-  'All',
-  'Normal',
-  'Gold',
-  'Gummy',
-  'Galaxy',
-  'Gem',
-  'Holofoil',
-]
-
-const ownedStatusValues: Array<SpriteFilters['ownedStatus']> = [
-  'All',
-  'Owned',
-  'NotOwned',
-  'Mastered',
-]
 
 const spritePopoverRef = ref<InstanceType<typeof SpritePopover> | null>(null)
 
@@ -109,16 +81,18 @@ function initFiltersFromUrl() {
     filters.value.search = search
   }
 
-  if (rarity && rarityValues.includes(rarity as SpriteFilters['rarity'])) {
-    filters.value.rarity = rarity as SpriteFilters['rarity']
+  if (rarity) {
+    const parsed = rarity.split('.').filter(isSpriteRarity)
+    if (parsed.length > 0) filters.value.rarity = parsed
   }
 
-  if (variant && variantValues.includes(variant as SpriteFilters['variant'])) {
-    filters.value.variant = variant as SpriteFilters['variant']
+  if (variant) {
+    const parsed = variant.split('.').filter(isSpriteVariant)
+    if (parsed.length > 0) filters.value.variant = parsed
   }
 
-  if (ownedStatus && ownedStatusValues.includes(ownedStatus as SpriteFilters['ownedStatus'])) {
-    filters.value.ownedStatus = ownedStatus as SpriteFilters['ownedStatus']
+  if (ownedStatus && isOwnedStatus(ownedStatus)) {
+    filters.value.ownedStatus = ownedStatus
   }
 }
 
@@ -136,7 +110,7 @@ onMounted(() => {
       :completion-percentage="completionPercentage"
       :sprites="sprites"
     />
-    <SpriteFiltersBar v-model="filters" />
+    <SpriteFiltersBar v-model="filters" @reset-filters="resetFilters" />
     <SharingPanel
       :copied-link="copiedLink"
       :is-exporting="isExporting"
@@ -148,7 +122,7 @@ onMounted(() => {
     />
     <main
       v-if="filteredSprites.length > 0"
-      class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2"
+      class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2"
     >
       <SpriteCard
         v-for="s in filteredSprites"

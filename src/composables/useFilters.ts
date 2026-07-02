@@ -2,14 +2,16 @@ import { ref, computed } from 'vue'
 import type { SpriteFilters } from '@/types/sprite'
 import { useSprites } from './useSprites'
 
-const filters = ref<SpriteFilters>({
+const DEFAULT_FILTERS: SpriteFilters = {
   search: '',
-  rarity: 'All',
-  variant: 'All',
+  rarity: [],
+  variant: [],
   ownedStatus: 'All',
   // sortBy: 'rarity-asc',
   // mastered: false,
-})
+}
+
+const filters = ref<SpriteFilters>({ ...DEFAULT_FILTERS })
 
 // const RARITY_WEIGHT: Record<string, number> = {
 //   Rare: 1,
@@ -21,6 +23,10 @@ const filters = ref<SpriteFilters>({
 
 export function useFilters() {
   const { sprites, ownedIds, masteredIds } = useSprites()
+
+  function resetFilters() {
+    filters.value = { ...DEFAULT_FILTERS }
+  }
 
   const filteredSprites = computed(() => {
     let list = [...sprites.value]
@@ -35,12 +41,12 @@ export function useFilters() {
       )
     }
 
-    if (filters.value.rarity !== 'All') {
-      list = list.filter((s) => s.rarity === filters.value.rarity)
+    if (filters.value.rarity.length > 0) {
+      list = list.filter((s) => filters.value.rarity.includes(s.rarity))
     }
 
-    if (filters.value.variant !== 'All') {
-      list = list.filter((s) => s.variant === filters.value.variant)
+    if (filters.value.variant.length > 0) {
+      list = list.filter((s) => filters.value.variant.includes(s.variant))
     }
 
     if (filters.value.ownedStatus === 'Owned') {
@@ -68,5 +74,5 @@ export function useFilters() {
     return list
   })
 
-  return { filters, filteredSprites }
+  return { filters, filteredSprites, resetFilters }
 }

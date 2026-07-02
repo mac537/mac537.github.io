@@ -1,11 +1,18 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { Sprite } from '@/types/sprite'
 import SpriteCard from '@/components/SpriteCard.vue'
 // import AppHeader from '@/components/AppHeader.vue'
 import { useSprites } from '@/composables/useSprites'
 import { useFilters } from '@/composables/useFilters'
 
+const MAX_CAPTURE_COLUMNS = 6
+
 const { filteredSprites } = useFilters()
+
+const captureColumns = computed(() =>
+  Math.max(2, Math.min(MAX_CAPTURE_COLUMNS, filteredSprites.value.length))
+)
 
 const {
   // sprites,
@@ -71,7 +78,11 @@ const props = defineProps<{
       /> -->
 
       <div
-        style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem;"
+        :style="{
+          display: 'grid',
+          gridTemplateColumns: `repeat(${captureColumns}, minmax(0, 1fr))`,
+          gap: '1rem'
+        }"
       >
         <SpriteCard
           v-for="s in filteredSprites"
@@ -83,7 +94,7 @@ const props = defineProps<{
         />
       </div>
 
-      <div class="text-xl font-semibold p-2 rounded bg-emerald-500/10 text-emerald-500">Generated automatically at https://mac537.github.io</div>
+      <div class="text-xl font-semibold text-gray-500">Generated automatically at https://mac537.github.io</div>
       <!-- <div class="flex items-center text-xl">Generated automatically at <a class="ml-1" href="https://mac537.github.io/" target="_blank" rel="noopener noreferrer">https://mac537.github.io/</a></div> -->
     </div>
   

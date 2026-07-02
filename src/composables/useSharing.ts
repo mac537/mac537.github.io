@@ -40,12 +40,12 @@ export function useSharing(activeFilters?: Ref<SpriteFilters>) {
         url.searchParams.set('search', normalizedSearch)
       }
 
-      if (rarity !== 'All') {
-        url.searchParams.set('rarity', rarity)
+      if (rarity.length > 0) {
+        url.searchParams.set('rarity', rarity.join('.'))
       }
 
-      if (variant !== 'All') {
-        url.searchParams.set('variant', variant)
+      if (variant.length > 0) {
+        url.searchParams.set('variant', variant.join('.'))
       }
 
       if (ownedStatus !== 'All') {

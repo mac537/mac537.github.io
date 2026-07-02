@@ -43,8 +43,8 @@ export interface Sprite {
 
 export interface SpriteFilters {
   search: string
-  rarity: 'All' | SpriteRarity
-  variant: 'All' | SpriteVariant
+  rarity: SpriteRarity[]
+  variant: SpriteVariant[]
   ownedStatus: 'All' | 'Owned' | 'NotOwned' | 'Mastered'
   // mastered: boolean
   // sortBy: 'rarity-desc' | 'rarity-asc' | 'name-asc'
