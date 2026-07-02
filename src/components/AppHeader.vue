@@ -81,7 +81,6 @@ watchEffect(() => {
       <template #start="{ totalPercent }">
         <div class="flex justify-between mt-4 mb-2 relative">
           <span>Completion {{ ownedCount }}/{{ totalCount }} ({{totalPercent}}%)</span>
-          <!-- <span :style="{ width: totalPercent + '%' }" class="absolute text-right">{{ totalPercent }}%</span> -->
           <span class="font-medium">100%</span>
         </div>
       </template>

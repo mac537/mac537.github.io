@@ -3,7 +3,6 @@ import { snapdom } from '@zumer/snapdom';
 
 import { DISCORD_EXPORT_VARIANTS, type TradingMatch, type SpriteFilters } from '@/types/sprite'
 import { useSprites } from './useSprites'
-// import { useToast } from './useToast'
 import { useToast } from 'primevue/usetoast';
 
 import { executeCopy } from '@/utils/clipboard'
@@ -17,9 +16,7 @@ const tradingMatch = ref<TradingMatch | null>(null)
 
 export function useSharing(activeFilters?: Ref<SpriteFilters>) {
   const { sprites, ownedIds, masteredIds, ownedCount } = useSprites()
-  // const { showToast } = useToast()
   const toast = useToast();
-
 
   const generateShareUrl = () => {
     const url = new URL(window.location.pathname, window.location.origin)
@@ -60,11 +57,6 @@ export function useSharing(activeFilters?: Ref<SpriteFilters>) {
     const url = generateShareUrl()
     if (executeCopy(url)) {
       toast.add({ summary: 'Link Copied!', detail: 'Share it on your Discord server.', icon: 'pi pi-link', severity: 'success', life: 3000 });
-      // copiedLink.value = true
-      // showToast('Link Copied!', 'Share it on your Discord server.', 'pi-link')
-      // setTimeout(() => {
-      //   copiedLink.value = false
-      // }, 2000)
     }
   }
 

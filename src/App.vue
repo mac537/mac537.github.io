@@ -10,10 +10,7 @@ import { useSprites } from '@/composables/useSprites'
 import { useFilters } from '@/composables/useFilters'
 import { useSharing } from '@/composables/useSharing'
 import { isOwnedStatus, isSpriteRarity, isSpriteVariant } from '@/constants/spriteFilters'
-// import { useSharing } from '@/composables/useSharing'
-// import DiscordModal from '@/components/DiscordModal.vue'
 
-// import type { ToastState } from '@/types/sprite'
 const { filters, filteredSprites, resetFilters } = useFilters()
 
 const {
@@ -40,23 +37,6 @@ const {
 } = useSprites()
 
 const spritePopoverRef = ref<InstanceType<typeof SpritePopover> | null>(null)
-
-// watch(() => isExporting, (newVal) => {
-//   debugger
-//   if (newVal) {
-//     toast.value = {
-//       message: 'Exporting image...',
-//       type: 'info',
-//       duration: 3000,
-//     }
-//   } else {
-//     toast.value = {
-//       message: 'Image exported successfully!',
-//       type: 'success',
-//       duration: 3000,
-//     }
-//   }
-// }, { immediate: true })
 
 function handleShowPopover(id: number) {
   if (spritePopoverRef.value) {

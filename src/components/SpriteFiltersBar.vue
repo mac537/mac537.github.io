@@ -3,7 +3,6 @@ import Select from 'primevue/select'
 import MultiSelect from 'primevue/multiselect'
 import IftaLabel from 'primevue/iftalabel'
 import InputText from 'primevue/inputtext'
-// import Search from '@primeicons/vue/search';
 
 import type { SpriteFilters, SpriteRarity, SpriteVariant } from '@/types/sprite'
 import { OWNED_STATUS_OPTIONS, RARITY_OPTIONS, VARIANT_OPTIONS } from '@/constants/spriteFilters'
